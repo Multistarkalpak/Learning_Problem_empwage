@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EMPLOYEEWAGEPROBLEM
 {
-    class company
+    class Company
     {
         public float EmpWagePerHour = 20;
         public int FullTime_WorkingHrs_PerDay = 8;
@@ -15,7 +15,7 @@ namespace EMPLOYEEWAGEPROBLEM
         public int MAX_WORKING_DAYS = 20;
         public string CompanyName;
 
-        public company(String CompanyName, int EmpWagePerhour, int FullTime_WorkingHrs_PerDay, int PartTime_WorkingHours_PerDay, int MAX_WORKING_HRS, int MAX_WORKING_DAYS)
+        public Company(String CompanyName, int EmpWagePerhour, int FullTime_WorkingHrs_PerDay, int PartTime_WorkingHours_PerDay, int MAX_WORKING_HRS, int MAX_WORKING_DAYS)
         {
             this.CompanyName = CompanyName;
             this.EmpWagePerHour = EmpWagePerhour;
