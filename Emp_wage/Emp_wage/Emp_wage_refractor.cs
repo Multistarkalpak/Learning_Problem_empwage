@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EMPLOYEEWAGEPROBLEM
 {
-    class EmployeeWageComputation
+    class EmployeeWageComputation : ICompute_Emp_Wage
     {
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
@@ -15,6 +15,7 @@ namespace EMPLOYEEWAGEPROBLEM
         public float TotalWage = 0;
         private Dictionary<String, Company> Companies = new Dictionary<String, Company>();
         public string[] CompanyList;
+
         public int ArrayIndex = 0;
 
         public EmployeeWageComputation(int Number)
