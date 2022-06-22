@@ -17,7 +17,6 @@ namespace EMPLOYEEWAGEPROBLEM
         private Dictionary<String, Company> Companies = new Dictionary<String, Company>();
         //public string[] CompanyList;
         public ArrayList CompanyList;
-
         public int ArrayIndex = 0;
 
         public EmployeeWageComputation(int Number)
@@ -73,24 +72,32 @@ namespace EMPLOYEEWAGEPROBLEM
                 }
                 EmpDailyWage = EmpWorkingHours * company.EmpWagePerHour;
 
-                TotalWage += EmpDailyWage;
+                // TotalWage += EmpDailyWage;
                 DayNumber++;
                 TotalWorkingHrs += EmpWorkingHours;
-                Monthly_Wage += TotalWage;
+                Monthly_Wage += EmpDailyWage;
 
             }
             //CompanyList[ArrayIndex] = Convert.ToString(Monthly_Wage);
             CompanyList.Add(Monthly_Wage);
             ArrayIndex++;
-            Console.WriteLine("Total working days :" + (DayNumber - 1) + "\n Total working :" + TotalWorkingHrs + "" + "\n monthlywage :" + Monthly_Wage + "");
+            //Console.WriteLine("Total working days :" + (DayNumber - 1) + "\n Total working :" + TotalWorkingHrs + "" + "\n monthlywage :" + Monthly_Wage + "");
 
         }
-        public void displayArray()
+        //public void displayArray()
+        //{
+        //    for (int i = 0; i < CompanyList.Count; i += 3)
+        //    {
+        //        Console.WriteLine("Monthly wage for {0} with \n DailyWage={1} is {2}\n", CompanyList[i], 
+        //            CompanyList[i + 1],CompanyList[i+2]);
+        //    }
+        //}
+        public void view_Wage(string Name)
         {
-            for (int i = 0; i < CompanyList.Count; i += 2)
-            {
-                Console.WriteLine("Monthly wage for {0} is {1}", CompanyList[i], CompanyList[i + 1]);
-            }
+            int Index = CompanyList.IndexOf(Name);
+            Console.WriteLine("Monthly wage for {0} with \n DailyWage={1} is {2}\n", CompanyList[Index],
+                   CompanyList[Index + 1], CompanyList[Index + 2]);
+
         }
 
     }
